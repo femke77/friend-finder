@@ -1,0 +1,87 @@
+var friendObjArr = [
+    {
+        "name":"Larry",
+        "photo":"https://upload.wikimedia.org/wikipedia/commons/7/70/Larry_David_at_the_2009_Tribeca_Film_Festival_2.jpg",
+        "scores":[
+            4,
+            1,
+            4,
+            4,
+            5,
+            1,
+            2,
+            5,
+            4,
+            1
+          ]
+      },
+      
+    {
+        "name":"Jeff",
+        "photo":"https://upload.wikimedia.org/wikipedia/commons/0/02/Garlin.jpg",
+        "scores":[
+            3,
+            3,
+            4,
+            1,
+            2,
+            5,
+            3,
+            4,
+            5,
+            1
+          ]
+      },
+      
+    {
+        "name":"Susie",
+        "photo":"https://mediad.publicbroadcasting.net/p/wyprmain/files/styles/x_large/public/201905/essman_twitter_crop.jpg",
+        "scores":[
+            2,
+            3,
+            5,
+            4,
+            5,
+            2,
+            3,
+            4,
+            2,
+            1
+          ]
+      },
+      
+    {
+        "name":"Cheryl",
+        "photo":"http://online.wsj.com/media/cherylhinescurbed_DV_20090914121032.jpg",
+        "scores":[
+            2,
+            3,
+            5,
+            5,
+            4,
+            2,
+            3,
+            4,
+            3,
+            2
+          ]
+      },
+      
+    {
+        "name":"Leon",
+        "photo":"https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_1440,w_2560,x_0,y_0/dpr_1.5/c_limit,w_1044/fl_lossy,q_auto/v1507638179/171009-_Wilstein-JB-Smoove-hero__gmzupt",
+        "scores":[
+            3,
+            5,
+            3,
+            4,
+            5,
+            3,
+            5,
+            1,
+            2,
+            5
+          ]
+      },
+      
+]
