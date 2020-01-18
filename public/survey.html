@@ -11,7 +11,20 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+
+    <style type="text/css">
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        </style>
+
+
 </head>
 
 <body>
@@ -21,15 +34,15 @@
 
         <!-- About You Section -->
         <h3>About You</h3>
-        <form>
+        <form class="survey">
             <div class="form-group">
                 <label for="name">Name (Required)</label>
-                <input type="text" class="form-control" id="name">       
+                <input type="text" name="name" class="form-control" id="name" required>
             </div>
-            
-            <div class="form-groug">
+
+            <div class="form-group">
                 <label for="link">Link to photo image (Required)</label>
-                <input type="text" class="form-control" id="link">
+                <input type="text" name="link" class="form-control" id="link" required>
             </div>
 
             <hr>
@@ -60,7 +73,7 @@
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5 (Strongly Agree)</option>
-                
+
                 </select>
             </div>
             <div class="form-group">
@@ -74,7 +87,7 @@
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5 (Strongly Agree)</option>
-                
+
                 </select>
             </div>
             <div class="form-group">
@@ -150,7 +163,8 @@
                 <label for="q9">
                     <h4>Question 9</h4>
                 </label>
-                <p>You think that everyone’s views should be respected regardless of whether they are supported by facts
+                <p>You think that everyone’s views should be respected regardless of whether they are supported by
+                    facts
                     or not.</p>
                 <select class="form-control w-25" id="q9">
                     <option value="1">1 (Strongly Disagree)</option>
@@ -176,7 +190,8 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary w-50 mb-5 fa fa-check-square-o" id="subBtn"> Submit</button>
+            <button type="submit" class="btn btn-primary w-50 mb-5 fa fa-check-square-o" id="subBtn">
+                Submit</button>
 
         </form>
 
@@ -207,46 +222,69 @@
     </div>
 
     <script type="text/javascript">
-       
+
+        var form = $(".survey");
+        form.validate({
+            rules: {
+                name: "required",
+                link: "required"
+            },
+            messages: {
+                name: "Please specify your name",
+                link: "Specify a link to your photo"
+
+            }
+        });
         //Convert the user's responses to an array using jquery id
         function getScores() {
             var scoreArray = [];
-            
+
             for (var i = 1; i < 11; i++) {
                 scoreArray.push($("#q" + i).val())
             }
             return scoreArray;
         }
 
+
         //on submit create a new friend object
         $("#subBtn").on("click", event => {
             event.preventDefault();
 
-            var newFriend = {
-                name: $("#name").val().trim(),
-                photo: $("#link").val().trim(),
-                scores: getScores()
+
+
+
+
+
+            if (form.valid()) {
+
+                var newFriend = {
+                    name: $("#name").val().trim(),
+                    photo: $("#link").val().trim(),
+                    scores: getScores()
+                }
+
+                console.log(newFriend);
+
+                //send the friend object to the server and receive back a matched friend to display with modal
+                $.post("/api/friends", newFriend,
+                    function (matchedFriend) {
+
+                        var html = "<div> Your new friend's name is " + matchedFriend.name + " </div>" +
+                            "</br>" +
+                            "<div><img src='" + matchedFriend.photo + "' height='300' width='300'></div>"
+                        $("#modalContent").append(html);
+                        $("#friendModal").modal("show");
+                    });
+
+                $("#name").val("");
+                $("#link").val("");
+            } else {
+                window.scrollTo(0, 0);
+                alert("Please fill out required fieids.");
+                
             }
 
-            console.log(newFriend);
-
-            //send the friend object to the server and receive back a matched friend to display with modal
-            $.post("/api/friends", newFriend, 
-              function(matchedFriend)  {
-                
-                var html = "<div> Your new friend's name is " + matchedFriend.name + " </div>" +
-                    "</br>" +
-                    "<div><img src='" + matchedFriend.photo + "' height='300' width='300'></div>"
-                $("#modalContent").append(html);
-                $("#friendModal").modal("show");
-            });
-
-            $("#name").val("");
-            $("#link").val("");
         });
-
-
-
 
 
 

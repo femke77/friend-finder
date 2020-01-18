@@ -1,7 +1,7 @@
 var friendObjArr = [
     {
         "name":"Larry",
-        "photo":"https://upload.wikimedia.org/wikipedia/commons/7/70/Larry_David_at_the_2009_Tribeca_Film_Festival_2.jpg",
+        "photo":"https://thenypost.files.wordpress.com/2013/08/larry_david-300x300.jpg?quality=80&strip=all&w=300&h=300&crop=1",
         "scores":[
             4,
             1,
@@ -13,46 +13,46 @@ var friendObjArr = [
             5,
             4,
             1
-          ]
+          ]             //31
       },
       
     {
         "name":"Jeff",
-        "photo":"https://upload.wikimedia.org/wikipedia/commons/0/02/Garlin.jpg",
+        "photo":"https://thumbnailer.mixcloud.com/unsafe/300x300/extaudio/6/0/5/c/707f-051b-4e27-9fa1-1b2c98e0bec3",
         "scores":[
             3,
             3,
             4,
             1,
-            2,
+            5,
             5,
             3,
             4,
             5,
-            1
+            1        //34
           ]
       },
       
     {
         "name":"Susie",
-        "photo":"https://mediad.publicbroadcasting.net/p/wyprmain/files/styles/x_large/public/201905/essman_twitter_crop.jpg",
+        "photo":"https://thenypost.files.wordpress.com/2013/08/essman-300x300.jpg?quality=80&strip=all",
         "scores":[
             2,
             3,
-            5,
+            2,
             4,
-            5,
+            2,
             2,
             3,
-            4,
             2,
-            1
+            2,
+            1         //23
           ]
       },
       
     {
         "name":"Cheryl",
-        "photo":"http://online.wsj.com/media/cherylhinescurbed_DV_20090914121032.jpg",
+        "photo":"https://deadorkicking.com/wp-content/uploads/featured-img/c/cheryl-hines-300x300.jpg",
         "scores":[
             2,
             3,
@@ -61,27 +61,27 @@ var friendObjArr = [
             4,
             2,
             3,
-            4,
-            3,
-            2
+            5,
+            5,
+            5
           ]
-      },
+      },                        //39
       
     {
         "name":"Leon",
-        "photo":"https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_1440,w_2560,x_0,y_0/dpr_1.5/c_limit,w_1044/fl_lossy,q_auto/v1507638179/171009-_Wilstein-JB-Smoove-hero__gmzupt",
+        "photo":"https://thenypost.files.wordpress.com/2013/08/31-1t777-jb2c-300x300.jpg?quality=80&strip=all&w=300&h=300",
         "scores":[
             3,
-            5,
+            1,
             3,
             4,
-            5,
+            1,
             3,
-            5,
+            1,
             1,
             2,
-            5
-          ]
+            2
+          ]              //21
       },
       
 ]
