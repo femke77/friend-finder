@@ -85,3 +85,5 @@ var friendObjArr = [
       },
       
 ]
+
+module.exports = friendObjArr;
