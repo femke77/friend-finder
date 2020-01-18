@@ -1,10 +1,10 @@
-# friend-finder
+# Friend Finder
 
 Friend Finder is an app that matches you with the person most likely to be your friend! The user takes a survey, which is a small personality test, and the app searches through all the friends in the database until it finds someone whose personality score is the closest to the user's. In other words, the differences between the user and the matched friend is the smallest available in the database. 
 
 ## Tech/Framework Used
 
-Friend Finder is written in JavaScript and uses Node/Express as the runtime environment and web framework respectively. For the purposes of this project, the "database" is a simple js file with an array of JSON objects. The app is hosted on Heroku at 
+Friend Finder is written in JavaScript and uses Node/Express as the runtime environment and web framework respectively. For the purposes of this project, the "database" is a simple js file with an array of JSON objects. The app is hosted on Heroku at:
 
 [Friend Finder](https://peaceful-beach-00204.herokuapp.com/)
 
