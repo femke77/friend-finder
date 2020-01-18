@@ -31,7 +31,7 @@ app.post("/api/friends", (req, res) => {
     console.log(matchedFriend)
 
     //push last so we don't compare to ourself during above loop
-    //friendsData.push(req.body)
+    friendsData.push(req.body)
 
     //send the matched friend 
     res.json(matchedFriend);
